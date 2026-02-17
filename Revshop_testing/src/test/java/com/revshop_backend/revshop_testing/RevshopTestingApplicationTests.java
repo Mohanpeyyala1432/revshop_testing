@@ -1,0 +1,13 @@
+package com.revshop_backend.revshop_testing;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class RevshopTestingApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
