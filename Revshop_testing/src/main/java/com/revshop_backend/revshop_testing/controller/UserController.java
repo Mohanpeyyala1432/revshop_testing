@@ -21,6 +21,13 @@ public class UserController {
         return "User module working!";
     }
 
+    @DeleteMapping("/delete")
+    public String deleteUser()
+    {
+        return "User deleted successfully";
+    }
+
+
 
 
 }
