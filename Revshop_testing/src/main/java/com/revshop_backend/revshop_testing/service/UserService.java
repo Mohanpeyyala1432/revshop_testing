@@ -5,8 +5,6 @@ import com.revshop_backend.revshop_testing.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserService {
 
@@ -17,6 +15,16 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User updateUser(Long id, User user) {
 
+        User existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        existingUser.setName(user.getName());
+        existingUser.setEmail(user.getEmail());
+
+        return userRepository.save(existingUser);
+    }
 }
+
 
