@@ -16,6 +16,18 @@ public class UserController {
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
+    @GetMapping("/hello")
+    public String hello() {
+        return "User module working!";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteUser()
+    {
+        return "User deleted successfully";
+    }
+
+
 
 
     // UPDATE
@@ -25,3 +37,5 @@ public class UserController {
         return userService.updateUser(id, user);
     }
 }
+
+
