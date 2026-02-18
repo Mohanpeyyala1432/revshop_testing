@@ -36,6 +36,14 @@ public class UserController {
                            @RequestBody User user) {
         return userService.updateUser(id, user);
     }
+
+    //Partial update
+    @PatchMapping("/partial/{id}")
+    public User patchUser(@PathVariable Long id,
+                          @RequestBody User user) {
+        return userService.patchUser(id, user);
+    }
+
 }
 
 

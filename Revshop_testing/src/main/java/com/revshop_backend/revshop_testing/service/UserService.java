@@ -35,6 +35,25 @@ public class UserService {
         }
     }
 
+    //partial update
+    public User patchUser(Long id, User user) {
+
+        User existingUser = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found with id " + id));
+
+        // Update only non-null fields
+        if (user.getName() != null) {
+            existingUser.setName(user.getName());
+        }
+
+        if (user.getEmail() != null) {
+            existingUser.setEmail(user.getEmail());
+        }
+
+        return userRepository.save(existingUser);
+    }
+
+
 }
 
 
